@@ -1,0 +1,54 @@
+<button (click)="back()" class="btn btn-info">Go Back</button>
+<div class="text-center">
+  <h3>Users</h3>
+  <button type="button" class="btn btn-success" (click)="getuser()">
+    {{ load }}
+  </button>
+  <br>
+  <br>
+  <table class="table table-dark table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">First</th>
+        <th scope="col">middle</th>
+        <th scope="col">last</th>
+        <th scope="col">email</th>
+        <th scope="col">phone</th>
+        <th scope="col">role</th>
+        <th scope="col">address</th>
+        <!-- <th scope="col">Customer</th> -->
+        <th scope="col">Actions!</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="!loading">
+      <tr *ngFor="let user of users">
+        <th scope="row">{{ user.id }}</th>
+        <td>{{ user.firstname }}</td>
+        <td>{{ user.middlename }}</td>
+        <td>{{ user.lastname }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phonenumber }}</td>
+        <td>{{ user.role }}</td>
+        <td>{{ user.address }}</td>
+        <!-- <td>{{ user.cname }}</td> -->
+        <td>
+          <button type="button" class="btn btn-primary" id=""
+          [routerLink]="['/edit/']" [queryParams]="{id:user.id}">Edit</button>
+         
+
+          <button
+            type="button"
+            class="btn btn-danger"
+            id=""
+            (click)="ondelete(user)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="loading" class="">Loading..</p>
+</div>
+<router-outlet></router-outlet>

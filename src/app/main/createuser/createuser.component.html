@@ -1,0 +1,51 @@
+<button (click)="back()" class="btn btn-info">Go Back</button> 
+<div class="container">
+  
+      
+      
+    <form #myForm="ngForm" class="form">
+           <p>New User</p>
+           <!-- <div class="mb-3">
+            <label for="id" class="form-label">Id:</label>
+            <input type="text" class="form-control" id="id" name="id" [(ngModel)]="users.id" required >
+        </div> -->
+
+           <div class="mb-3">
+               <label for="firstname" class="form-label">FirstName:</label>
+               <input type="text" class="form-control" id="firstname" name="firstname" [(ngModel)]="users.firstname" required >
+           </div>
+   
+           <div class="mb-3">
+               <label for="middlename" class="form-label">MiddleName:</label>
+               <input type="text" class="form-control" id="middlename" name="middlename" [(ngModel)]="users.middlename" required>
+           </div>
+   
+           <div class="mb-3">
+               <label for="Lastname" class="form-label">LastName:</label>
+               <input type="text" class="form-control" id="lastname" name="lastname" [(ngModel)]="users.lastname" required>
+           </div>
+   
+           <div class="mb-3">
+               <label for="email" class="form-label">Email:</label>
+               <input type="email" class="form-control" id="email" name="email" [(ngModel)]="users.email" required >
+           </div>
+   
+           <div class="mb-3">
+               <label for="phonenumber" class="form-label">PhoneNumber:</label>
+               <input type="text" class="form-control" id="phonenumber" name="phonenumber" [(ngModel)]="users.phonenumber" required>
+           </div>
+           <div class="mb-3">
+               <label for="role" class="form-label">Role:</label>
+               <input type="text" class="form-control" id="role" name="role" [(ngModel)]="users.role" required>
+           </div>
+           <div class="mb-3">
+               <label for="address" class="form-label">Address:</label>
+               <input type="text" class="form-control" id="address" name="address" [(ngModel)]="users.address" required>
+           </div>
+   
+           <button type="submit" class="add btn btn-primary" (click)="addUser(myForm.value,myForm)" >Add New User</button>
+   
+          
+           <button type="button" class="btn btn-danger" (click)="oncancel(myForm)" >Cancel</button>
+       </form>
+   
