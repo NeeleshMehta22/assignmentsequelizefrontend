@@ -2,7 +2,7 @@ const { user } = require("../config/db.config");
 module.exports = (sequelize,Sequelize)=>{
     const Role = sequelize.define('role',{
         rname:{
-            type:Sequelize.String,
+            type:Sequelize.STRING,
         },
         rkey:{
             type:Sequelize.INTEGER

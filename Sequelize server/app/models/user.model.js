@@ -30,11 +30,11 @@ module.exports = (sequelize,Sequelize)=>{
         }
     });
 
-    User.associate= models =>{
-        User.hasOne(models.customer.model,{
-            onDelete: 'cascade' 
-        });
-    }
+    // User.associate= models =>{
+    //     User.hasOne(models.customer.model,{
+    //         onDelete: 'cascade' 
+    //     });
+    // }
 
 
     
